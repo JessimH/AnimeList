@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" mode="ios">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeList</title>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <!-- ionic -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script type="module">
+      import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js';
+      window.toastController = toastController;
+    </script>
+     <!-- customs -->
+     <script defer src="js/app.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <ion-app>
+        <ion-header id="header">
+          <ion-toolbar color="dark">
+            <!-- <img src="images/header.gif" alt="" srcset=""> -->
+            <ion-title><ion-icon name="home"></ion-icon></ion-title>
+          </ion-toolbar>
+        </ion-header>
+      
+        <ion-content class="ion-padding">
+            <ion-toolbar id="searchToolbar" color="dark">
+                <ion-searchbar id="searchbar"></ion-searchbar>
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Que recherchez vous?</ion-label>
+                        <ion-select color="tertiary" id="select" interface="popover" value="manga">
+                            <ion-select-option value="manga">Manga</ion-select-option>
+                            <ion-select-option value="anime">Anime</ion-select-option>
+                            <ion-select-option value="character">Personnage</ion-select-option>
+                            <ion-select-option value="people">Personne</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+            </ion-toolbar>
+            
+            <!-- affichage resultats API -->
+            <ul id="ul"></ul>
+
+        </ion-content>
+
+        <ion-footer>
+          <ion-toolbar color="dark">
+            <ion-title>by JessDev</ion-title>
+          </ion-toolbar>
+        </ion-footer>
+      </ion-app>
+</body>
+</html>
